@@ -4,22 +4,36 @@ import (
 	"fmt"
 )
 
-func main() {
-	var result float64
-
-	var a float64 = 0.4
-	var b float64 = 0.8
-	var x [5]float64 = [5]float64{4.48, 3.56, 2.78, 5.28, 3.21}
-
-	fmt.Println("\nзадача А:")
-	for i := 3.2; i < 6.2; i += 0.6 {
-		result = lab4.colc(a, b, i)
-		fmt.Println("При x = %.2f, y = %.2f \n", i, result)
+func SolveTaskA(a, b, xStart, xEnd, step float64) []float64 {
+	results := []float64{}
+	for x := xStart; x <= xEnd; x += step {
+		y := CalculateY(a, b, x)
+		results = append(results, y)
 	}
+	return results
+}
 
-	fmt.Println("\nЗадача В:")
-	for i := 0; i < len(x); i++ {
-		result = lab4.colc(a, b, x[i])
-		fmt.Println("При x =", x[i], "y =", result)
+func SolveTaskB(a, b float64, xValues []float64) []float64 {
+	results := []float64{}
+	for _, x := range xValues {
+		y := CalculateY(a, b, x)
+		results = append(results, y)
 	}
+	return results
+}
+func StartLab4() {
+	a := 0.4
+	b := 0.8
+
+	fmt.Println("Задача A:")
+	xStartA := 3.2
+	xEndA := 6.2
+	stepA := 0.6
+	resultsA := SolveTaskA(a, b, xStartA, xEndA, stepA)
+	fmt.Println(resultsA)
+
+	fmt.Println("Задача B:")
+	xValuesB := []float64{4.48, 3.56, 2.78, 5.28, 3.21}
+	resultsB := SolveTaskB(a, b, xValuesB)
+	fmt.Println(resultsB)
 }
