@@ -4,7 +4,7 @@ import ("fmt"
 		"math"
 )
 
-func Calculator(a, b, x float64) float64 {
+func calculate(a, b, x float64) float64 {
 	var y float64 := (math.Pow(a, x) - math.Pow(b, x)) / (math.Log10(a/b) * math.Cbrt(a*b))
 	return y
 }
