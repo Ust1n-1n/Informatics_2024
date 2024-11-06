@@ -42,3 +42,4 @@ func StartLab4() {
 	fmt.Println(resultsB)
 }
 
+
