@@ -40,5 +40,4 @@ func StartLab4() {
 	xValuesB := []float64{4.48, 3.56, 2.78, 5.28, 3.21}
 	resultsB := SolveTaskB(a, b, xValuesB)
 	fmt.Println(resultsB)
-=======
 }
