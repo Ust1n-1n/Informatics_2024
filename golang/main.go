@@ -6,6 +6,7 @@ import (
 
 func main() {
 	fmt.Println("kozin_danila_sergeevich")
+
 }
 func SolveTaskA(a, b, xStart, xEnd, step float64) []float64 {
 	results := []float64{}
