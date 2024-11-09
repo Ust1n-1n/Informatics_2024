@@ -1,17 +1,19 @@
 package lab4
 
-import ("fmt"
-		"math"
+import (
+	"fmt"
+	"math"
 )
+
 func calculate(a, b, x float64) float64 {
-	var y float64 := (math.Pow(a, x) - math.Pow(b, x)) / (math.Log10(a/b) * math.Cbrt(a*b))
+	var y float64 = (math.Pow(a, x) - math.Pow(b, x)) / (math.Log10(a/b) * math.Cbrt(a*b))
 	return y
 }
 
 func SolveTaskA(a, b, xStart, xEnd, step float64) []float64 {
 	results := []float64{}
 	for x := xStart; x <= xEnd; x += step {
-		y := CalculateY(a, b, x)
+		y := calculate(a, b, x)
 		results = append(results, y)
 	}
 	return results
@@ -20,7 +22,7 @@ func SolveTaskA(a, b, xStart, xEnd, step float64) []float64 {
 func SolveTaskB(a, b float64, xValues []float64) []float64 {
 	results := []float64{}
 	for _, x := range xValues {
-		y := CalculateY(a, b, x)
+		y := calculate(a, b, x)
 		results = append(results, y)
 	}
 	return results
@@ -41,5 +43,3 @@ func StartLab4() {
 	resultsB := SolveTaskB(a, b, xValuesB)
 	fmt.Println(resultsB)
 }
-
-

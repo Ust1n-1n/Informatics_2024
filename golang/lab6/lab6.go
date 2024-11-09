@@ -1,4 +1,4 @@
-package main
+package lab6
 
 import (
 	"fmt"
@@ -34,7 +34,7 @@ func (t *Television) Display() {
 	fmt.Println("╚════════════════╝")
 }
 
-func main() {
+func RunLab6() {
 	tv := &Television{}
 	tv.SetChannel(5)
 	tv.Display()
